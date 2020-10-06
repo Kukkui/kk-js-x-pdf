@@ -13,8 +13,14 @@ express()
   
   .get('/', (req, res) => res.render('pages/login'))
   .post('/auth',(req, res) => {
-    const a = req.body.username;
-    res.send(a);
+    const userx = req.body.username;
+    const passx = req.body.password;
+      if(userx=='kukkui' && passx=='kukkui'){
+        res.render('pages/customerx')
+      }
+      else{
+        res.render('pages/login')
+      }
     })
   // {
   //   var username = request.body.username;
