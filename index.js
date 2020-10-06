@@ -1,8 +1,8 @@
 var mysql = require('mysql');
-var express = require('express');
+// var express = require('express');
 var session = require('express-session');
 var bodyParser = require('body-parser');
-var path = require('path');
+// var path = require('path');
 var xlsxj = require("xlsx-to-json");
 var excelToJson = require('convert-excel-to-json');
 var XLSX = require('xlsx');
@@ -11,18 +11,19 @@ var fill_pdf = require('fill-pdf-utf8');
 const pdftk = require('node-pdftk');
 var formidable = require('formidable');
 
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
+// const express = require('express');
+// var app =express();
+// const path = require('path');
+// const PORT = process.env.PORT || 5000;
+// express()
+//   .use(express.static(path.join(__dirname, 'public')))
+//   .set('views', path.join(__dirname, 'views'))
+//   .set('view engine', 'ejs')
+//   .get('/', (req, res) => res.render('pages/login'))
 
-express()
-  .use(express.static(path.join(__dirname, 'public')))
-  .set('views', path.join(__dirname, 'views'))
-  .set('view engine', 'ejs')
-  .get('/', (req, res) => res.render('pages/login'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+//   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-  app.use(express.static(__dirname));
+//   app.use(express.static(__dirname));
 
   // app.use('*.php',function(request,response,next) {
   // 	execPHP.parseFile(request.originalUrl,function(phpResult) {
@@ -31,7 +32,25 @@ express()
   // 	});
   // });
   
-  
+var express = require('express');
+var app = express();
+
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+// use res.render to load up an ejs view file
+
+// index page
+app.get('/', function(req, res) {
+    res.render('pages/login');
+});
+
+// about page
+app.get('/home', function(req, res) {
+    res.render('pages/customerx');
+});
+
+
   
   
   var workbook = XLSX.readFile('test.xlsx');
@@ -53,7 +72,7 @@ express()
   });
   
   //Set app as express 
-  var app = express();
+  // var app = express();
   // var app = http.createServer(function(req,res){
       
   // });
@@ -289,3 +308,5 @@ express()
       // response.end();
       //similar to break fn
   });
+app.listen(5000);
+console.log('5000 is the magic port');
