@@ -1,13 +1,22 @@
 const express = require('express')
 const path = require('path')
+const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 5000
 
 express()
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
+
+
+  .use(bodyParser.urlencoded({ extended: false }))
   .set('view engine', 'ejs')
+  
   .get('/', (req, res) => res.render('pages/login'))
-  .post('/auth',(req, res) => res.render('pages/index'))
+  .post('/auth',(req, res) => {
+    const a = req.body.username;
+    res.send(a);
+    })
+  // {
   //   var username = request.body.username;
   //   var password = request.body.password;
   //   if (username && password) {
@@ -20,17 +29,18 @@ express()
   //       //     request.session.loggedin = true;
   //       //     request.session.username = username;
   //       //     response.redirect('/home');
-  //       }else{
-  //           response.send('Incorrect account');
+  //       }
+  //   else{
+  //       esponse.send('Incorrect account');
   //       }
 
   //       // response.end();
-  //       });
-  //   }
-  //   else{
-  //       response.send('Please enter Username and Passeord');
+  //       // });
+
+  //   // else{
+  //       // response.send('Please enter Username and Passeord');
   //       // response.end();
-  //   }
+  //   // }
   
   // })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
