@@ -14,7 +14,7 @@ fs.readFile("test.json", function(err, data) {
   // Converting to JSON 
   users = JSON.parse(data); 
     
-  //console.log(users); // Print users  
+  console.log(users); // Print users  
 }); 
 express()
   .use(express.static(path.join(__dirname, 'public')))
@@ -30,6 +30,7 @@ express()
     const passx = req.body.password;
       if(userx=='kukkui' && passx=='kukkui'){
         res.render('pages/customerx',{datax:users})
+        
       }
       else{
         res.render('pages/login')
