@@ -64627,7 +64627,7 @@ async function fillForm() {
     const url = 'https://pdf-lib.js.org/assets/ubuntu/Ubuntu-R.ttf'
     const fontBytes = await fetch(url).then((res) => res.arrayBuffer())
      // Fetch the PDF with form fields
-   const formUrl = '/public/pdf-template/TestForm4New.pdf'
+   const formUrl = '/pdf-template/TestForm4New.pdf'
    const formPdfBytes = await fetch(formUrl).then(res => res.arrayBuffer())
 
          // Fetch the Mario image

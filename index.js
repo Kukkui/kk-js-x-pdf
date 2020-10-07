@@ -12,7 +12,7 @@ express()
   .set('view engine', 'ejs')
   
   .get('/', (req, res) => res.render('pages/login'))
-  .post('/auth',(req, res) => {
+  .post('auth',(req, res) => {
     const userx = req.body.username;
     const passx = req.body.password;
       if(userx=='kukkui' && passx=='kukkui'){
