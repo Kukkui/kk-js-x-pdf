@@ -23,6 +23,7 @@
     "fs": "0.0.1-security",
     "http": "0.0.1-security",
     "jexcel": "^4.4.1",
+    "jexcel3": "^1.0.1",
     "js-base64": "^3.5.2",
     "mdb-ui-kit": "^1.2.0",
     "mdbootstrap": "^4.19.1",
