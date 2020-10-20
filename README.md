@@ -1,7 +1,8 @@
 # node-js-getting-started
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
-# Must have JDK installed in the project's path (For module fill-pdf-uf8).
+# Must have JDK installed in the project's path.
+For module fill-pdf-uf8
 
 This application supports the [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
 
